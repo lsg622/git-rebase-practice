@@ -31,7 +31,45 @@ app.get("/ping", (req, res) => {
 feature/signin 브랜치의 경우 app.post('/users/signin', ...)
 feature/signup 브랜치의 경우 app.post('/users/signup', ...)
 */
+app.post("/users/signup", async (req, res) => {
+  const { username, email, password } = req.body;
+  return await appDataSource.query(
+    `
+      INSERT INTO
+        users (
+          username,
+          email,
+          password			
+        )
+      VALUES (
+        ?,
+        ?,
+        ?
+      )
+    `,
+    [username, email, password]
+  );
+});
 
+app.post("/users/signup", async (req, res) => {
+  const { username, email, password } = req.body;
+  return await appDataSource.query(
+    `
+      INSERT INTO
+        users (
+          username,
+          email,
+          password			
+        )
+      VALUES (
+        ?,
+        ?,
+        ?
+      )
+    `,
+    [username, email, password]
+  );
+});
 app.listen(PORT, () => {
   appDataSource
     .initialize()
@@ -42,5 +80,6 @@ app.listen(PORT, () => {
       // initialize().then() 밑의 41번 line에 추가
       console.log("DB Connection has been failed");
     });
+
   console.log(`Listening to request on localhost:${PORT}`);
 });
