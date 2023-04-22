@@ -84,6 +84,37 @@
   // 버그를 해결한 경우
   Fix: 로그인 id, pw에 공백 입력 가능한 버그 픽스
   ```
+  
+  
+  [Test 4] git command 정리
+다음 git command에 대해 git-rebase-test/README.md 파일에 설명을 작성하여 주세요.
+
+양식은 자유롭습니다.
+
+아래 내용에 얼마나 알고있는지 각자의 양식과 언어로 자유롭게 작성해주시면 됩니다.
+
+$ git rebase [-i]
+ = 커밋 내용 중 대표로 표시할 내용만 남기고 나머지 커밋은 보이지 않도록 수정하는 
+ 
+$ git rebase --abort
+ = git rebase 과정 중지. rebase 진행하기 전 상황으로 돌아 갈 수 있다.
+ 
+$ git rebase --continue
+ = conflict 사항 해결 이후 멈춰있던 git rebase 과정 이어서 진행. 충돌이 여러번 나면 그때마다 충돌을 해결하고 git add . / git rebase --continue를 반복한다.
+ = 충돌 해결이 안되는 경우, 아예 rebase를 진행하기 전 상황으로 돌아갈 수 있다. (--aobrt)
+ 
+$ git reflog
+ = reflog는 커밋 해시, 작성자, 날짜 및 변경 사항을 설명하는 메시지를 포함하여 참조에 대한 모든 최근 변경 사항 목록이 표시됨.
+ = 손실된 커밋 또는 분기를 복구하거나 Git 리포지토리의 변경 기록을 이해하는 데 유용한 명령어.
+ 
+$ git reset
+ = 
+  
+  
+  
+  
+  
+  
 
 ---
 
